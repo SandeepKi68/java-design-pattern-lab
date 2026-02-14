@@ -10,6 +10,10 @@ public class PaymentService {
         paymentMethods = new HashMap<>();
     }
     public void addPaymentMethod(String name, PaymentMethod paymentMethod){
-
+    paymentMethods.put(name,paymentMethod);
+    }
+    public void makePayment(String name){
+     PaymentMethod paymentMethod = paymentMethods.get(name);
+     paymentMethod.pay(); //Run Time Polymorphism
     }
 }
